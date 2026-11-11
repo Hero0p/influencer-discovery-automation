@@ -35,7 +35,7 @@ influencer-discovery/
 ├── .env                    your API keys (git-ignored, never committed)
 ├── .env.example            the same file without secrets
 ├── requirements.txt        Python packages
-├── README.md               what the system does, setup, results, limitations
+├── README.md               what the system does, results, setup
 ├── CODE_STRUCTURE.md       this file
 ├── config/
 │   ├── niche.yaml          the niche, search queries, filter thresholds

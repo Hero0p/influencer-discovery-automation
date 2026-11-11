@@ -122,5 +122,6 @@ on its next poll.
   while the Zap is on. Zapier tracks rows by position.
 - The trial is needed for this Zap because it has more than two steps and uses a
   filter. Record the demo video or screenshots before the trial ends.
-- Instagram DMs are not part of the Zap. See the "Instagram DMs" section of the
-  README for the manual workflow in the `DM Queue` tab.
+- Instagram DMs are not part of the Zap. They are written to the `DM Queue` tab,
+  each with an `ig.me` link, to be sent by hand (Instagram's API does not allow
+  cold DMs).
