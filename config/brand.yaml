@@ -1,0 +1,59 @@
+# The brand doing the outreach.
+#
+# This is a FICTIONAL demo brand made up for the assignment. While is_demo is
+# true the pipeline refuses to run with SEND_MODE=live, so no creator can be
+# emailed on behalf of a brand that does not exist.
+
+is_demo: true
+name: Demo Brand
+sender_name: Demo Brand Partnerships Team
+
+description: >
+  Demo Brand is a small direct-to-consumer brand that sells everyday home and
+  self-care essentials: refillable soy candles, linen home textiles, a daily
+  planner and reusable drinkware.
+
+target_audience: >
+  People in their 20s and 30s who enjoy home routines, slow living, organisation
+  and self-care.
+
+value_proposition: >
+  Creators choose the products they actually want to use, keep full creative
+  freedom over how they show them, and get a fast reply from a small team.
+
+# Used by the AI model for the 0-10 brand-fit score.
+good_fit: >
+  Calm, personal channels showing home life, routines, organising, self-care or
+  slow living, where home and self-care products would appear naturally.
+poor_fit: >
+  Channels built on shock content, heavy profanity, politics, gambling or adult
+  themes, channels where home products would feel out of place, and channels
+  whose videos are not in English (the brand sells and writes in English only).
+
+# The collaboration offered to each creator. Rules are checked from top to
+# bottom and the first one whose "when" conditions all hold is used.
+# Conditions: min_followers, max_followers, min_engagement (%), min_brand_fit (0-10).
+collaboration_angles:
+  - name: Brand ambassador program
+    offer: a three-month ambassador role with new products every month and a monthly fee
+    when: {min_followers: 30000, min_engagement: 5.0}
+
+  - name: Sponsorship
+    offer: a paid sponsored segment in one upcoming video
+    when: {min_followers: 50000}
+
+  - name: Barter collaboration
+    offer: a free product box of their choice in exchange for an honest feature in one video
+    when: {max_followers: 15000}
+
+  - name: Affiliate campaign
+    offer: a personal discount code for their viewers with commission on every sale
+    when: {min_brand_fit: 9}
+
+  - name: Paid product placement
+    offer: a paid product placement inside one of their routine or home videos
+    when: {min_engagement: 4.0}
+
+  - name: UGC content creation
+    offer: a paid brief for two short videos that the brand can post on its own channels
+    when: {}

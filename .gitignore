@@ -1,0 +1,13 @@
+# Secrets: never commit these
+.env
+credentials/
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Local pipeline state (the CSV exports in data/ are kept on purpose)
+data/*.db
+data/*.db-journal

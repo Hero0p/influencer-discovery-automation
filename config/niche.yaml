@@ -1,0 +1,111 @@
+# The niche the pipeline looks for, how it searches, and the filter thresholds.
+# Change this file (not the code) to target another niche.
+
+name: Lifestyle
+platform: YouTube
+
+# Shown to the AI model so it knows what counts as this niche.
+definition: >
+  Creators whose main content is their own everyday life and personal routines:
+  daily or weekly vlogs, morning and night routines, home and apartment life,
+  cleaning and organising, slow or intentional living, self-care and wellness
+  habits, productivity and reset routines, casual home cooking as part of daily life.
+
+not_this_niche: >
+  Channels that are mainly about one specialised topic (gaming, tech reviews,
+  finance or crypto, fitness coaching, makeup tutorials, fashion hauls, travel
+  guides, parenting advice), and channels that are not a personal creator at all
+  (news, music, compilations, podcasts, companies, kids' shows).
+
+# The AI model must pick exactly one of these for every channel.
+niche_options:
+  - Lifestyle
+  - Fitness
+  - Fintech
+  - Beauty
+  - Fashion
+  - Crypto
+  - Parenting
+  - Gaming
+  - Technology
+  - Food
+  - Travel
+  - Other
+
+discovery:
+  # Only videos published in the last N days are searched, so every channel found is active.
+  published_within_days: 60
+  relevance_language: en
+  region_code: ""          # e.g. "US" or "IN"; empty = worldwide
+  video_duration: medium   # 4-20 minute videos; keeps Shorts-only channels out
+  # Each query is one YouTube search call returning up to 50 videos.
+  queries:
+    - day in my life vlog
+    - week in my life vlog
+    - morning routine vlog
+    - night routine vlog
+    - slow living vlog
+    - cozy vlog at home
+    - living alone vlog
+    - sunday reset routine
+    - clean with me vlog
+    - productive day in my life
+    - self care day vlog
+    - simple living vlog
+    - homemaking vlog
+    - work from home day in the life
+    - weekend vlog
+    - silent vlog daily life
+    - apartment tour
+    - moving into my new apartment vlog
+    - life in my 20s vlog
+    - life in my 30s vlog
+    - monthly reset routine
+    - minimalist lifestyle
+    - habits that changed my life
+    - grocery haul and meal prep vlog
+
+filters:
+  min_followers: 5000
+  max_followers: 100000
+  max_days_since_upload: 60     # activity: newest video must be this recent
+  min_recent_videos: 3          # activity: needs at least this many public videos
+  min_engagement_rate: 2.0      # percent, (likes + comments) / views
+  allowed_countries: []         # e.g. ["US", "GB"]; empty = any country
+  min_keyword_hits: 3           # content relevance: distinct niche keywords found
+  min_niche_confidence: 0.6     # AI classification confidence, 0-1
+  min_brand_fit: 6              # AI brand-fit score, 0-10
+
+# Words that signal the niche. Counted in the channel description, channel
+# keywords, YouTube topic labels and recent video titles.
+keywords:
+  - lifestyle
+  - vlog
+  - day in my life
+  - day in the life
+  - week in my life
+  - routine
+  - slow living
+  - simple living
+  - cozy
+  - home
+  - apartment
+  - living alone
+  - reset
+  - clean with me
+  - self care
+  - self-care
+  - wellness
+  - productive
+  - productivity
+  - minimalis
+  - homemaking
+  - habits
+  - organiz
+  - organis
+  - decor
+  - grocery
+  - meal prep
+  - journal
+  - weekend
+  - daily life

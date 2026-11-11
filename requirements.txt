@@ -1,0 +1,14 @@
+# Runtime
+requests>=2.32
+python-dotenv>=1.0
+PyYAML>=6.0
+pydantic>=2.7
+beautifulsoup4>=4.12
+email-validator>=2.2
+google-genai>=2.3.0
+gspread>=6.1
+google-auth>=2.30
+apify-client>=3.0
+
+# Tests
+pytest>=8.0
