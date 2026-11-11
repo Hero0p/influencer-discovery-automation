@@ -37,11 +37,7 @@ class Gemini:
         return self.models[0]
 
     def ask(self, prompt, schema, system):
-        """Return the model's answer parsed into `schema` (a Pydantic model class).
-
-        Tries the main model first. When a model is rate limited (429) or
-        overloaded (5xx) and stays that way, the next model takes over for the
-        rest of the run.
+        """Return the model's answer parsed into `schema`.
         """
         while self.models:
             answer = self._ask_model(self.model, prompt, schema, system)
@@ -98,8 +94,6 @@ class Gemini:
 
 def retry_after_seconds(error):
     """How long the API asks us to wait (its Retry-After header), or 0 when it does not say.
-
-    A daily limit answers with many hours; a per-minute limit with a few seconds.
     """
     try:
         return int(error.response.headers.get("retry-after", 0))
